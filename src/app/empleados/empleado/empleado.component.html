@@ -1,1 +1,20 @@
-<p>empleado works!</p>
+<h1>Empleado-1</h1>
+<dl>
+    <td>Nombre:</td>
+    <dd>{{ empleado1.nombre }}</dd>
+    <td>Edad:</td>
+    <dd>{{ empleado1.edad }}</dd>
+    <td>Metodo:</td>
+    <dd>{{getNombreEdad()}}</dd>
+    <td>En mayusculas:</td>
+    <dd>{{enMayusculaNombre}}</dd>
+</dl>
+<!-- SI EL BOTON NO CUMPLE LA CONDICION NO APARECERA -->
+<button *ngIf="empleado1.nombre !== 'Paco'" 
+(click)="cambiaEmpleado()">Cambiar nombre</button>
+
+<button *ngIf="empleado1.edad !== 44" class="ml2" 
+(click)="cambiaEdad()">Cambiar edad</button>
+
+<!-- BOTON PARA RESTABLECER VALORES -->
+<button class="ml2" (click)="restableceValores()">Restablecer</button>
