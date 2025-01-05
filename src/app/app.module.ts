@@ -7,6 +7,9 @@ import { ContadorComponent } from './contador/contador.component';
 import { EmpleadoComponent } from './empleados/empleado/empleado.component';
 import { ListaComponent } from './empleados/lista/lista.component';
 
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,8 +19,11 @@ import { ListaComponent } from './empleados/lista/lista.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule,
+    FormsModule
   ],
+   
   providers: [],
   bootstrap: [AppComponent]
 })

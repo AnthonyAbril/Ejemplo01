@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Empleado } from './empleado'; //importamos la clase Empleado
+import { Empleado } from '../empleado'; //importamos la clase Empleado
 
 @Component({
   selector: 'app-empleados-empleado',

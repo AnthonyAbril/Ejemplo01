@@ -1,5 +1,24 @@
 <h1>Aplicación {{ title }}</h1>
 <hr>
+
 <!-- <app-contador> </app-contador> -->
 <!-- <app-empleados-empleado></app-empleados-empleado> -->
-<app-empleados-lista></app-empleados-lista>
+
+<h3>Gestión del empleado-{{ seleccionado }}</h3>
+<label>Nombre: </label>
+<input type="text" [(ngModel)]="empleados[seleccionado].nombre"><br> <!-- Cambiamos el valor -->
+<label>Edad: </label>
+<input type="number" [(ngModel)]="empleados[seleccionado].edad"><br> <!-- Cambiamos el valor -->
+<label>Contratado: </label>
+<input type="number" [(ngModel)]="empleados[seleccionado].contratado" min="0" max="1"> <!-- Cambiamos el valor -->
+<br> 
+
+<h4>El nombre del empleado-0 es ahora: {{ empleados[seleccionado].nombre }}</h4> <!-- Muestra el valor -->
+<h4>{{ empleados[seleccionado].nombre }} está ahora contratado: {{ empleados[seleccionado].contratado }}</h4>  <!-- Muestra el valor -->
+
+<label>Cambiar al empleado: </label>
+<input type="number" [(ngModel)]="seleccionado" min="0" max="3"><br>
+<hr>
+<app-empleados-lista [empleados]="empleados"
+(empleadosActualizados)="actualizarEmpleados($event)"></app-empleados-lista> <!-- Enviamos y recibimos el valor -->
+
