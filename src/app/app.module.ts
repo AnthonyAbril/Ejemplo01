@@ -1,30 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
+
 import { ContadorComponent } from './contador/contador.component';
-import { EmpleadoComponent } from './empleados/components/empleado/empleado.component';
-import { ListaComponent } from './empleados/components/lista/lista.component';
-
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
+import { EmpleadosModule } from './empleados/empleados.module';
 @NgModule({
-  declarations: [
-    AppComponent,
-    ContadorComponent,
-    EmpleadoComponent,
-    ListaComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    CommonModule,
-    FormsModule
-  ],
-   
-  providers: [],
-  bootstrap: [AppComponent]
+ declarations: [
+ AppComponent,
+ ContadorComponent,
+ ],
+ imports: [
+ BrowserModule,
+ AppRoutingModule,
+ EmpleadosModule,
+ ],
+ providers: [],
+ bootstrap: [AppComponent]
 })
 export class AppModule { }

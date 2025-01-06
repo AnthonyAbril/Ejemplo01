@@ -27,9 +27,12 @@ export class EmpleadoComponent {
     new Empleado('Pedro', 22)
   ];
   public seleccionado: number = 0;
-    actualizarEmpleados(empleadosActualizados: Empleado[]) {
+    
+  actualizarEmpleados(empleadosActualizados: Empleado[]) {
     this.empleados = empleadosActualizados;
-  }
+    if (this.seleccionado > this.empleados.length-1)
+      this.seleccionado = 0;
+  }   
    
   public nuevoEmpleado(): void {
     this.empleados.push(new Empleado('',0));  //se añade nueva instancia vacia de empleado en el array empelados
