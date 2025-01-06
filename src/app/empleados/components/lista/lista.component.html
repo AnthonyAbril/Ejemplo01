@@ -20,7 +20,8 @@
                 [ngStyle]="{'background-color':colorC, 'color':'white'}">Despedir</button>
                 <button *ngIf="!empleado.contratado" (click)="contratar(i)"
                 [ngStyle]="{'background-color':colorD}">Contratar</button>
-                <button ngIf="empleados.length > 1" (click)="borrar(i)" class="ml-2">Borrar empleado</button>
+                <!-- Boton de borrado solo sale cuando hay mas de un empleado -->
+                <button *ngIf="empleados.length > 1" (click)="borrar(i)" class="ml2">Borrar empleado</button>
                 <!-- <div [ngSwitch]="empleado.contratado">
                     <div *ngSwitchCase="true">
                         <button (click)="despedir(i)"

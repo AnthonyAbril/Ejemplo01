@@ -4,8 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContadorComponent } from './contador/contador.component';
-import { EmpleadoComponent } from './empleados/empleado/empleado.component';
-import { ListaComponent } from './empleados/lista/lista.component';
+import { EmpleadoComponent } from './empleados/components/empleado/empleado.component';
+import { ListaComponent } from './empleados/components/lista/lista.component';
 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';

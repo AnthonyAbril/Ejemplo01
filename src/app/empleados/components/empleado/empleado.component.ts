@@ -27,11 +27,8 @@ export class EmpleadoComponent {
     new Empleado('Pedro', 22)
   ];
   public seleccionado: number = 0;
-
-  actualizarEmpleados(empleadosActualizados: Empleado[]) {
-    this.empleados = empleadosActualizados; //aplica los cambios que su clase hija le pasa (lista)
-    if (this.seleccionado > this.empleados.length-1)  //Si al borrar estamos apuntando a una posicion que deja de existir
-      this.seleccionado = 0;  //seleccionara el primero
+    actualizarEmpleados(empleadosActualizados: Empleado[]) {
+    this.empleados = empleadosActualizados;
   }
    
   public nuevoEmpleado(): void {
