@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 import { FacturaComponent } from './componets/factura/factura.component';
 import { ListaComponent } from './componets/lista/lista.component';
-
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ListaComponent } from './componets/lista/lista.component';
     ListaComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule   
   ],
   exports: [
     FacturaComponent,
