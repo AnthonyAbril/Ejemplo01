@@ -8,9 +8,6 @@
 <label>Contratado: </label>
 <input type="number" [(ngModel)]="empleados[seleccionado].contratado" min="0" max="1"> <!-- Cambiamos el valor -->
 
-<!-- Boton para crear nuevos empleados -->
-<button (click)="nuevoEmpleado()">Nuevo empleado</button>
-
 <!-- Estos botones llaman a una funcion de lista usando vbleLlamada como referencia aqui y donde se llama al contenedor
 <button *ngIf="empleados[seleccionado].contratado" (click)="vbleLlamada.despedir(seleccionado)">Despedir</button>
 <button *ngIf="!empleados[seleccionado].contratado" (click)="vbleLlamada.contratar(seleccionado)">Contratar</button> -->
@@ -19,13 +16,16 @@
 <button *ngIf="empleados[seleccionado].contratado" (click)="llamaAhijo()">Despedir</button>
 <button *ngIf="!empleados[seleccionado].contratado" (click)="llamaAhijo()">Contratar</button>-->
 <br> 
-
-<h4>El nombre del empleado-0 es ahora: {{ empleados[seleccionado].nombre }}</h4> <!-- Muestra el valor -->
-<h4>{{ empleados[seleccionado].nombre }} está ahora contratado: {{ empleados[seleccionado].contratado }}</h4>  <!-- Muestra el valor -->
+<br> 
+<!--<h4>El nombre del empleado-0 es ahora: {{ empleados[seleccionado].nombre }}</h4>  Muestra el valor -->
+<!--<h4>{{ empleados[seleccionado].nombre }} está ahora contratado: {{ empleados[seleccionado].contratado }}</h4>   Muestra el valor -->
 
 <!-- input para variar el selector de empleados -->
 <label>Cambiar al empleado: </label>
 <input type="number" [(ngModel)]="seleccionado" min="0" max="{{ empleados.length-1 }}"><br>
+
+<!-- Boton para crear nuevos empleados -->
+<button (click)="nuevoEmpleado()">Nuevo empleado</button>
 <hr>
 
 <app-empleados-lista [empleados]="empleados"
