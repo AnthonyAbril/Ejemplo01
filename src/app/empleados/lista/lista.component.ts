@@ -24,12 +24,16 @@ export class ListaComponent {
 
   despedir(indice:number): void {
     this.empleados[indice].contratado = false;
-    this.empleadosActualizados.emit(this.empleados);
-    }
-    contratar(indice:number): void {
+    this.empleadosActualizados.emit(this.empleados); //envia la lista actualizada de empleados al padre
+  }
+  contratar(indice:number): void {
     this.empleados[indice].contratado = true;
-    this.empleadosActualizados.emit(this.empleados);
-    }
+    this.empleadosActualizados.emit(this.empleados); //envia la lista actualizada de empleados al padre
+  }
+  borrar(indice:number):void{
+    this.empleados.splice(indice,1);  //elimina del array la casilla de posicion indice
+    this.empleadosActualizados.emit(this.empleados); //envia la lista actualizada de empleados al padre
+  }
 
   public colorD:string = 'lime';
   public colorC:string = 'orange';

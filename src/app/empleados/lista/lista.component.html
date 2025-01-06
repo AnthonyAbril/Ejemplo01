@@ -20,6 +20,7 @@
                 [ngStyle]="{'background-color':colorC, 'color':'white'}">Despedir</button>
                 <button *ngIf="!empleado.contratado" (click)="contratar(i)"
                 [ngStyle]="{'background-color':colorD}">Contratar</button>
+                <button (click)="borrar(i)" class="ml-2">Borrar empleado</button>
                 <!-- <div [ngSwitch]="empleado.contratado">
                     <div *ngSwitchCase="true">
                         <button (click)="despedir(i)"
