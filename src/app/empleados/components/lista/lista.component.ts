@@ -10,6 +10,8 @@ import { EmpleadosService } from '../../empleados.service';
  })
  export class ListaComponent {
   empleados: Empleado[] = [];
+  public filterSearch:string = '';
+
   constructor(private _empleadosService: EmpleadosService) { }
   ngOnInit() {
   this.empleados = this._empleadosService.ObtengoEmpleados();
