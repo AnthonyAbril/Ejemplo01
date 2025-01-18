@@ -1,32 +1,19 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { Factura } from '../../factura';
-
+import { FacturasService } from '../../facturas.service';
 @Component({
   selector: 'app-facturas-lista',
   standalone: false,
   templateUrl: './lista.component.html',
-  styleUrl: './lista.component.css',
-})
-
-export class ListaComponent {
-  @Input() facturas: Factura[] = [];
-  @Output() facturasActualizadas = new EventEmitter<Factura[]>();
-  
-  sinIva(indice: number): void {
-    this.facturas[indice].iva = false;
-    this.facturasActualizadas.emit(this.facturas);
+  styleUrl: './lista.component.css'
+ })
+ export class ListaComponent {
+  facturas: Factura[] = [];
+  constructor(private _facturasService: FacturasService) { }
+  ngOnInit() {
+  this.facturas = this._facturasService.obtengoFacturas();
   }
-  
-  conIva(indice: number): void {
-    this.facturas[indice].iva = true;
-    this.facturasActualizadas.emit(this.facturas);
-  }
-  
-  public colorD: string = 'lime';
-  public colorC: string = 'red';
-  
-  borrar(indice: number): void {
-    this.facturas.splice(indice, 1);
-    this.facturasActualizadas.emit(this.facturas);
-  }
-}
+  modificar(numfra: number): void { }
+  borrar(numfra: number): void { }
+ }
+ 

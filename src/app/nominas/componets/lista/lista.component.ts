@@ -1,19 +1,18 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { Nomina } from '../../nomina';
-
+import { NominasService } from '../../nominas.service';
 @Component({
-  selector: 'app-nominas-lista',
-  standalone: false,
-  templateUrl: './lista.component.html',
-  styleUrl: './lista.component.css'
+selector: 'app-nominas-lista',
+standalone: false,
+templateUrl: './lista.component.html',
+styleUrl: './lista.component.css'
 })
-
 export class ListaComponent {
-  @Input() nominas: Nomina[] = [];
-  @Output() nominasActualizadas = new EventEmitter<Nomina[]>();
-  
-  borrar(indice: number): void {
-    this.nominas.splice(indice, 1);
-    this.nominasActualizadas.emit(this.nominas);
-  }
+nominas: Nomina[] = [];
+constructor(private _nominasService: NominasService) { }
+ngOnInit() {
+this.nominas = this._nominasService.obtengoNominas();
+}
+modificar(nnomina: number): void { }
+borrar(nnomina: number): void { }
 }
